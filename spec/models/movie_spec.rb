@@ -83,11 +83,11 @@ describe 'Movie' do
       end
       
       it 'can get the first item in the database' do
-        expect(can_get_the_first_item_in_the_database).to eq("Movie_0")
+        expect(can_get_the_first_item_in_the_database.title).to eq("Movie_0")
       end
 
       it 'can get the last item in the databse' do
-        expect(can_get_the_last_item_in_the_database).to eq("Movie_4")
+        expect(can_get_the_last_item_in_the_database.title).to eq("Movie_4")
       end
 
       it 'can get the size of the database' do
@@ -95,7 +95,7 @@ describe 'Movie' do
       end
 
       it 'can retrive from the database using an id' do
-        expect(can_find_the_first_item_from_the_database_using_id).to eq("Movie_0")
+        expect(can_find_the_first_item_from_the_database_using_id.title).to eq("Movie_0")
       end
 
       it 'can retrieve from the database using different attributes' do
