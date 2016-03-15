@@ -1,3 +1,4 @@
+require 'pry'
 describe 'Movie' do
   let(:attributes) {{
       title: "The Sting",
@@ -52,6 +53,7 @@ describe 'Movie' do
   context '#save' do
     it 'can be saved to the database' do
       movie = Movie.new(attributes)
+      binding.pry
       movie.save
       expect(Movie.find_by(attributes)).to eq(movie)
     end
