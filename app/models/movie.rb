@@ -1,5 +1,5 @@
 class Movie < ActiveRecord::Base
-  attr_accessor :title, :id, :release_date, :director, :lead, :in_theaters
+  # attr_accessor :title, :id, :release_date, :director, :lead, :in_theaters
   #
   # def initialize(attributes={})
   #   # @id = attributes[:id]
@@ -9,7 +9,7 @@ class Movie < ActiveRecord::Base
   #   @lead = attributes[:lead]
   #   @in_theaters = attributes[:in_theaters]
   # end
-  # #
+  #
   # def self.find_by(attributes)
   #   Movie.where(
   #           title: attributes[:title],
