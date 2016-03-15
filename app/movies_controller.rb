@@ -5,6 +5,14 @@
 #   movie = __                     #   movie = Movie.new
 # end                              # end
 
+def attributes
+  { title: "The Sting",
+    release_date: 1973,
+    director: "George Roy Hill",
+    lead: "Paul Newman",
+    in_theaters: false }
+end
+
 def can_be_instantiated_and_then_saved
   movie = Movie.new
   movie.title = "This is a title."
@@ -12,14 +20,8 @@ def can_be_instantiated_and_then_saved
 end
 
 def can_be_created_with_a_hash_of_attributes
-  attributes = {
-      title: "The Sting",
-      release_date: 1973,
-      director: "George Roy Hill",
-      lead: "Paul Newman",
-      in_theaters: false
-  }
   movie = Movie.new(attributes)
+  movie.save
 end
 
 def can_be_created_in_a_block
