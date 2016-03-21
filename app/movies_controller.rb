@@ -23,7 +23,10 @@ def can_be_created_with_a_hash_of_attributes
 end
 
 def can_be_created_in_a_block
-  1.times do Movie.create
+  Movie.create do |i|
+    i.title = 'Home Alone'
+    i.release_date = 1990
+  end
 end
 
 def can_get_the_first_item_in_the_database
@@ -48,9 +51,7 @@ def can_find_by_multiple_attributes
    release_date: 2000, 
    director: "Me"
 }
-  attributes.select do |element|
-    Movie.find(element) == Movie.find(element.valu)
-  end
+Movie.find_by(attributes)
 end
 
 def can_find_using_where_clause_and_be_sorted
@@ -89,15 +90,7 @@ end
 
 def can_destroy_all_items_at_once
   10.times do |i|
-    Movie.create(title: "Movie_#{i}")
+  Movie.create(title: "Movie_#{i}")
   end
   Movie.delete_all
 end
-
-
-
-
-
-
-
-
