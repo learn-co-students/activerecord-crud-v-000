@@ -1,0 +1,38 @@
+/usr/local/opt/rbenv/versions/2.1.5/bin/ruby -r ./siteconf20160324-13190-1xl8p9h.rb extconf.rb
+checking if the C compiler accepts ... yes
+Building nokogiri using packaged libraries.
+checking for gzdopen() in -lz... yes
+checking for iconv... yes
+************************************************************************
+IMPORTANT NOTICE:
+
+Building Nokogiri with a packaged version of libxml2-2.9.2
+with the following patches applied:
+	- 0001-Revert-Missing-initialization-for-the-catalog-module.patch
+	- 0002-Fix-missing-entities-after-CVE-2014-3660-fix.patch
+
+Team Nokogiri will keep on doing their best to provide security
+updates in a timely manner, but if this is a concern for you and want
+to use the system library instead; abort this installation process and
+reinstall nokogiri as follows:
+
+    gem install nokogiri -- --use-system-libraries
+        [--with-xml2-config=/path/to/xml2-config]
+        [--with-xslt-config=/path/to/xslt-config]
+
+If you are using Bundler, tell it to use the option:
+
+    bundle config build.nokogiri --use-system-libraries
+    bundle install
+
+Note, however, that nokogiri is not fully compatible with arbitrary
+versions of libxml2 provided by OS/package vendors.
+************************************************************************
+Extracting libxml2-2.9.2.tar.gz into tmp/x86_64-unknown-linux-gnu/ports/libxml2/2.9.2... OK
+Running patch with /home/nitrous/code/labs/activerecord-crud-v-000/.bundle/gems/nokogiri-1.6.6.2/ports/patches/libxml2/0001-Revert-Missing-initialization-for-the-catalog-module.patch...
+Running 'patch' for libxml2 2.9.2... OK
+Running patch with /home/nitrous/code/labs/activerecord-crud-v-000/.bundle/gems/nokogiri-1.6.6.2/ports/patches/libxml2/0002-Fix-missing-entities-after-CVE-2014-3660-fix.patch...
+Running 'patch' for libxml2 2.9.2... OK
+Running 'configure' for libxml2 2.9.2... OK
+Running 'compile' for libxml2 2.9.2... 
+extconf failed, uncaught signal 1
