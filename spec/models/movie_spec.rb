@@ -106,7 +106,7 @@ describe 'Movie' do
 
       it 'can retrieve from the database using different attributes' do
         movie = Movie.create(title: "Title", release_date: 2000, director: "Me")
-        expect(can_find_by_multiple_attributes).to eq(movie)
+        expect(can_find_by_different_attributes).to eq(movie)
       end
 
       it 'can use a where clause and be sorted' do
