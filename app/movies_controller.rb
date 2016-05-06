@@ -24,7 +24,8 @@ end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    __
+    m.title = "Home Alone"
+    m.release_date = 1990
   end
 end
 
@@ -69,7 +70,7 @@ def can_update_using_update_method
   # Update movie title to "Wat, huh?"
   Movie.create(title: "Wat?")
   movie = Movie.find_by(title: "Wat?")
-  movie.update("Wat, huh?")
+  movie.update(title: "Wat, huh?")
 end
 
 def can_update_multiple_items_at_once
@@ -78,10 +79,7 @@ def can_update_multiple_items_at_once
     Movie.create(title: "Movie_#{i}", release_date: 2000+i)
   end
 
-  5.times do |j|
-    movie = Movie.find_by(id: j)
-    movie.update(title: "A Movie")
-  end
+  Movie.update_all(title: "A Movie")
 end
 
 def can_destroy_a_single_item
