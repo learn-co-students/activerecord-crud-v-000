@@ -6,9 +6,9 @@
 # end                              # end
 
 def can_be_instantiated_and_then_saved
-  movie = __
+  movie = Movie.new
   movie.title = "This is a title."
-  __
+  movie.save
 end
 
 def can_be_created_with_a_hash_of_attributes
@@ -29,11 +29,11 @@ def can_be_created_in_a_block
 end
 
 def can_get_the_first_item_in_the_database
-  __
+  Movie.first
 end
 
 def can_get_the_last_item_in_the_database
-  __
+  Movie.last
 end
 
 def can_get_size_of_the_database
