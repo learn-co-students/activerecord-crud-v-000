@@ -38,11 +38,16 @@ def can_get_the_last_item_in_the_database
 end
 
 def can_get_size_of_the_database
-  Movie.all.count
+  Movie.all.size
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  Movie.find_by(id: 1).title
+  # My passing solution:
+  # Movie.find_by(id: 1).title
+
+  # Using the find method, you can retrieve the object corresponding
+  # to the specified primary key that matches any supplied options.
+  Movie.find(1).title
 end
 
 def can_find_by_multiple_attributes
@@ -55,7 +60,7 @@ end
 def can_find_using_where_clause_and_be_sorted
   # For this test return all movies released after 2002 and ordered by 
   # release date descending
-  Movie.where("release_date > ?", 2002).order(release_date: :desc)
+  Movie.where("release_date > 2002").order(release_date: :desc)
 end
 
 def can_be_found_updated_and_saved
