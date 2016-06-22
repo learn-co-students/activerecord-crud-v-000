@@ -1,3 +1,4 @@
+require 'pry'
 describe 'Movie' do
   let(:attributes) {{
       title: "The Sting",
@@ -73,6 +74,7 @@ describe 'Movie' do
         movie = can_be_created_in_a_block
 
         expect(Movie.last).to eq(movie)
+        #binding.pry
         expect(Movie.last.title).to eq("Home Alone")
         expect(Movie.last.release_date).to eq(1990)
       end
