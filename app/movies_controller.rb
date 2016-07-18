@@ -6,9 +6,9 @@
 # end                              # end
 
 def can_be_instantiated_and_then_saved
-  movie = __
+  movie = Movie.new
   movie.title = "This is a title."
-  __
+  movie.save
 end
 
 def can_be_created_with_a_hash_of_attributes
@@ -19,21 +19,21 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = __
+  movie = Movie.new(attributes)
 end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    __
+    Movie.new(m)
   end
 end
 
 def can_get_the_first_item_in_the_database
-  __
+  Movie.first
 end
 
 def can_get_the_last_item_in_the_database
-  __
+  Movie.last
 end
 
 def can_get_size_of_the_database
@@ -46,13 +46,13 @@ end
 
 def can_find_by_multiple_attributes
   # title == "Title"
-  # release_date == 2000, 
+  # release_date == 2000,
   # director == "Me"
   __
 end
 
 def can_find_using_where_clause_and_be_sorted
-  # For this test return all movies released after 2002 and ordered by 
+  # For this test return all movies released after 2002 and ordered by
   # release date descending
   __
 end
@@ -92,11 +92,3 @@ def can_destroy_all_items_at_once
   end
   __
 end
-
-
-
-
-
-
-
-
