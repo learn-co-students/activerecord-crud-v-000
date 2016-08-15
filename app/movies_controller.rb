@@ -19,12 +19,13 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = movie.create(atributes)
+  movie = Movie.create(attributes)
 end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    __
+    m.title = "Home Alone"
+    m.release_date = 1990
   end
 end
 
