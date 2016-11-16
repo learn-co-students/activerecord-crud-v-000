@@ -1,3 +1,4 @@
+require 'pry'
 describe 'Movie' do
   let(:attributes) {{
       title: "The Sting",
@@ -15,6 +16,7 @@ describe 'Movie' do
     let(:movie) { Movie.new }
     it 'has a title' do
       movie.title = "The Matrix"
+      #binding.pry
       expect(movie.title).to eq("The Matrix")
     end
 
