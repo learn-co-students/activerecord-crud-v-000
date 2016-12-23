@@ -5,10 +5,12 @@
 #   movie = __                     #   movie = Movie.new
 # end                              # end
 
+
+
 def can_be_instantiated_and_then_saved
-  movie = __
+  movie = Movie.new
   movie.title = "This is a title."
-  __
+  movie.in_theaters = false
 end
 
 def can_be_created_with_a_hash_of_attributes
@@ -19,25 +21,29 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = __
+   Movie.create(attributes)
 end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    __
+    m.title = "The Sting",
+    m.release_date = 1973,
+    m.director = "George Roy Hill",
+    m.lead = "Paul Newman",
+    m.in_theaters = false
   end
 end
 
 def can_get_the_first_item_in_the_database
-  __
+  movie = Movie.first 
 end
 
 def can_get_the_last_item_in_the_database
-  __
+  movie = Movie.last
 end
 
 def can_get_size_of_the_database
-  __
+  size = Movie.all.size
 end
 
 def can_find_the_first_item_from_the_database_using_id
