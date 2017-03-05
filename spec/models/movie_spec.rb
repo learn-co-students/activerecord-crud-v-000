@@ -96,6 +96,7 @@ describe 'Movie' do
       end
 
       it 'can get size of the database' do
+        # binding.pry
         movies_size = can_get_size_of_the_database
         expect(movies_size).to eq(5)
       end
