@@ -1,11 +1,11 @@
 GIT
   remote: https://github.com/bmabey/database_cleaner.git
-  revision: f15d7610a801e40d1570b56e869e563cdcff198a
+  revision: f30d5be108aa5edadfc16c480be3ed23cfbe0e05
   specs:
-    database_cleaner (1.5.3)
+    database_cleaner (1.6.0)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     activemodel (4.2.6)
       activesupport (= 4.2.6)
@@ -109,4 +109,4 @@ DEPENDENCIES
   thin
 
 BUNDLED WITH
-   1.11.2
+   1.12.5
