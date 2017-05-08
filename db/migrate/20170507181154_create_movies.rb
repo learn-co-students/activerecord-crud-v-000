@@ -7,6 +7,6 @@ class CreateMovies < ActiveRecord::Migration
       t.varchar :release_date
       t.string :lead
       t.integer :in_theaters
-      end
+      end 
     end
 end
