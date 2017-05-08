@@ -19,12 +19,12 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = __
+  movie = Movie.new(title: attributes[:title], release_date: attributes[:release_date], director: attributes[:director], lead: attributes[:lead], in_theaters: attributes[:in_theaters])
 end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    __
+    m.string = title
   end
 end
 
