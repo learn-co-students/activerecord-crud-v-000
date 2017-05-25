@@ -6,8 +6,9 @@
 # end                              # end
 
 def can_be_instantiated_and_then_saved
-  movie = Movie.create(title: "This is a title.")
+  movie = Movie.new
   movie.title = "This is a title."
+  movie.save
 end
 
 def can_be_created_with_a_hash_of_attributes
@@ -41,7 +42,7 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  Movie.first.title
+  Movie.find(1).title
 end
 
 def can_find_by_multiple_attributes
@@ -54,7 +55,8 @@ end
 def can_find_using_where_clause_and_be_sorted
   # For this test return all movies released after 2002 and ordered by
   # release date descending
-  Movie.find_by_sql("SELECT * FROM movies WHERE release_date > 2002 ORDER BY title DESC")
+  Movie.where("release_date > 2002").order(release_date: :desc)
+  # Movie.find_by_sql("SELECT * FROM movies WHERE release_date > 2002 ORDER BY title DESC")
 end
 
 def can_be_found_updated_and_saved
@@ -88,5 +90,5 @@ def can_destroy_all_items_at_once
   10.times do |i|
     Movie.create(title: "Movie_#{i}")
   end
-  Movie.delete_all
+  Movie.destroy_all
 end
