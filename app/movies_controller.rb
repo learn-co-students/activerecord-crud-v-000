@@ -6,9 +6,9 @@
 # end                              # end
 
 def can_be_instantiated_and_then_saved
-  movie = __
+  movie = Movie.new
   movie.title = "This is a title."
-  __
+  movie.save
 end
 
 def can_be_created_with_a_hash_of_attributes
@@ -19,13 +19,14 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = __
+  movie = Movie.create(attributes)
 end
 
-def can_be_created_in_a_block
-  Movie.create do |m|
-    __
-  end
+def can_be_created_in_a_block (title, year)
+Movie.create do |m|
+                 m.title = title
+                 m.release_date = year
+            end
 end
 
 def can_get_the_first_item_in_the_database
