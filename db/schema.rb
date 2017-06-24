@@ -11,14 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624205721) do
-
-  create_table "movie", force: :cascade do |t|
-    t.string  "title"
-    t.integer "release_date"
-    t.string  "director"
-    t.string  "lead"
-    t.string  "in_theaters"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
