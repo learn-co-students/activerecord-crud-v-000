@@ -49,7 +49,7 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  first_movie = Movie.all.find{|m| m.id = 1}
+  first_movie = Movie.find{|m| m.id = 1}
   first_movie.title
 end
 
