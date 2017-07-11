@@ -49,19 +49,17 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  first_movie = Movie.find{|m| m.id = 1}
+
+  first_movie = Movie.where(id: 1).take
   first_movie.title
+
 end
 
 def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  Movie.find do |m|
-    m.title = "Title"
-    m.release_date = 2000
-    m.director = "Me"
-  end
+  Movie.where(title: "Title", release_date: 2000, director: "Me").take
 end
 
 def can_find_using_where_clause_and_be_sorted
