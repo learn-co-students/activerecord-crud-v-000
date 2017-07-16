@@ -24,7 +24,11 @@ end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    
+    m.title = :title,
+    m.release_date = :release_date,
+    m.director = :director,
+    m.lead = :lead,
+    m. in_theaters = :in_theaters
   end
 end
 
