@@ -26,40 +26,36 @@ def can_be_created_in_a_block
   Movie.create do |m|
     m.title = 'Home Alone'
     m.release_date = 1990
-    m.director = 'derek'
-    m.lead = 'lead'
-    m.in_theaters = 'true'
-
   end
 end
 
 def can_get_the_first_item_in_the_database
-  movie = Movie.first.title
+  Movie.first.title
 end
 
 def can_get_the_last_item_in_the_database
-  movie = Movie.last.title
+  Movie.last.title
 end
 
 def can_get_size_of_the_database
-  movie = Movie.count
+  Movie.all.size
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  movie = Movie.find_by(id: 1).title
+  Movie.find_by(id: 1).title
 end
 
 def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  movie = Movie.where(title: 'Title', release_date: 2000, director: 'Me')[0]
+  Movie.where(title: 'Title', release_date: 2000, director: 'Me')[0]
 end
 
 def can_find_using_where_clause_and_be_sorted
   # For this test return all movies released after 2002 and ordered by
   # release date descending
-  movie = Movie.where("release_date > ?", 2002).order(release_date: :desc)
+  Movie.where("release_date > ?", 2002).order(release_date: :desc)
 end
 
 def can_be_found_updated_and_saved
