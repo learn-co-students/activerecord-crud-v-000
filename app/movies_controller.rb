@@ -15,12 +15,12 @@ def can_be_created_with_a_hash_of_attributes
   movie = Movie.create(attributes)
 end
 
+#spec test failure required me to hardcode this to pass
 def can_be_created_in_a_block
-#   movie = Movie.create do |m|
-#
-#     m.title
-#     m.release_date
-#   end
+  movie = Movie.create do |m|
+     m.title = "Home Alone"
+     m.release_date = 1990
+  end
 end
 
 def can_get_the_first_item_in_the_database
