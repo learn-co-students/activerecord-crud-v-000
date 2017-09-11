@@ -24,20 +24,17 @@ end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    m.title = "The integer"
-    m.release_date = 1000
-    m.director = "George Roy Hill"
-    m.lead = "Paul Newman"
-    m.in_theaters = false
+    m.title = "Home Alone"
+    m.release_date = 1990
   end
 end
 
 def can_get_the_first_item_in_the_database
-  Movie.first
+  Movie.first.title
 end
 
 def can_get_the_last_item_in_the_database
-  Movie.last
+  Movie.last.title
 end
 
 def can_get_size_of_the_database
@@ -45,14 +42,15 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  Movie.find(1)
+  Movie.find(1).title
 end
 
 def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  Movie.where(title: "Title", release: 2000, director: "Me")
+
+  Movie.where("title = ? AND release_date = ? AND director = ?" ,"Title",2000,"Me").first
 end
 
 def can_find_using_where_clause_and_be_sorted
@@ -64,7 +62,7 @@ end
 def can_be_found_updated_and_saved
   # Updtate the title "Awesome Flick" to "Even Awesomer Flick"
   Movie.create(title: "Awesome Flick")
-  Movie.where("title = ?", "Awesome Flick").update(title:"Awesome Flick")
+  Movie.where("title = ?", "Awesome Flick").update(title:"Even Awesomer Flick")
   #__
   #__
 end
@@ -82,7 +80,7 @@ def can_update_multiple_items_at_once
     Movie.create(title: "Movie_#{i}", release_date: 2000+i)
   end
   # %=wildcard
-  Movie.where("title = ?", "#{Movie_}%").update_all(title:"A Movie")
+  Movie.where("title LIKE ?","#{'Movie_'}%" ).update_all(title:"A Movie")
 end
 
 def can_destroy_a_single_item
@@ -95,5 +93,6 @@ def can_destroy_all_items_at_once
   10.times do |i|
     Movie.create(title: "Movie_#{i}")
   end
-  Movie.where("title = ?", "#{Movie_}%").destroy_all
+  
+  Movie.where("title LIKE ?", "#{'Movie_'}%").destroy_all
 end
