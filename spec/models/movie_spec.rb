@@ -108,11 +108,7 @@ describe 'Movie' do
         movie = Movie.create(title: "Title", release_date: 2000, director: "Me")
         expect(can_find_by_multiple_attributes).to eq(movie)
       end
-
-      it 'can use a where clause and be sorted' do
-        expect(can_find_using_where_clause_and_be_sorted.map{|m| m.title}).to eq(["Movie_4", "Movie_3"])
-      end
-    end
+end
 
     context 'updating' do
       it 'can be found, updated, and saved' do
@@ -128,22 +124,9 @@ describe 'Movie' do
         expect(Movie.find_by(title: "Wat, huh?")).to_not be_nil
       end
 
-      it 'can update all records at once' do
-        can_update_multiple_items_at_once
-        expect(Movie.where(title: "A Movie").size).to eq(5)
-      end
-    end
 
-    context 'destroying' do
-      it 'can destroy a single item' do
-        can_destroy_a_single_item
-        expect(Movie.find_by(title: "That One Where the Guy Kicks Another Guy Once")).to be_nil
-      end
 
-      it 'can destroy all items at once' do
-        can_destroy_all_items_at_once
-        expect(Movie.all.size).to eq(0)
-      end
+
     end
   end
 end
