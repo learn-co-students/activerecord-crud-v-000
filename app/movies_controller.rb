@@ -1,14 +1,17 @@
 # Replace the '__' in the below methods to to make the specs pass!
 # Each '__' corresponds to a single line of code you will need to write.
 # See the example below on the left and how it should look on the right.
-# def make_a_new_movie_instance    # def make_a_new_movie_instance
-#   movie = __                     #   movie = Movie.new
-# end                              # end
+# def make_a_new_movie_instance
+# def make_a_new_movie_instance
+#   movie = __
+#   movie = Movie.new
+# end
+# end
 
 def can_be_instantiated_and_then_saved
-  movie = __
+  movie = Movie.new
   movie.title = "This is a title."
-  __
+  movie.save
 end
 
 def can_be_created_with_a_hash_of_attributes
@@ -19,49 +22,57 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = __
+  movie = Movie.create(attributes)
 end
 
 def can_be_created_in_a_block
-  Movie.create do |m|
-    __
+  movie = Movie.create do |m|
+    m.name = "The Sting"
+    m.release_date = 1973
+    m.director = "George Roy Hill"
+    m.lead = "Paul Newman"
+    m.in_theaters = false
   end
 end
+# user = User.new do |u|
+#   u.name = "David"
+#   u.occupation = "Code Artist"
+# end
 
 def can_get_the_first_item_in_the_database
-  __
+  Movie.all.first
 end
 
 def can_get_the_last_item_in_the_database
-  __
+  Movie.all.last
 end
 
 def can_get_size_of_the_database
-  __
+  Movie.all.count
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  __
+  Movie.find_by(id: 1)
 end
 
 def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  __
+  Movie.where(title == "Title", release_date == 2000, director == "Me")
 end
 
 def can_find_using_where_clause_and_be_sorted
-  # For this test return all movies released after 2002 and ordered by 
+  # For this test return all movies released after 2002 and ordered by
   # release date descending
-  __
+  Movie.where(release_date > 2002).order('release_date desc')
 end
 
 def can_be_found_updated_and_saved
   # Updtate the title "Awesome Flick" to "Even Awesomer Flick"
   Movie.create(title: "Awesome Flick")
-  __
-  __
+  flick = Movie.find_by(title: "Awesome Flick")
+  flick.update(title: "Even Awesomer Flick")
   __
 end
 
@@ -92,11 +103,3 @@ def can_destroy_all_items_at_once
   end
   __
 end
-
-
-
-
-
-
-
-
