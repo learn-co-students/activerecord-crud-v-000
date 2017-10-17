@@ -22,14 +22,12 @@ def can_be_created_with_a_hash_of_attributes
   movie = Movie.create(attributes)
 end
 
-def can_be_created_in_a_block
+def can_be_created_in_a_block(title, year)
   Movie.create do |m|
 
-    m.title = "Home Alone"
-    m.release_date = 1990
-    m.director
-    m.lead
-    m.in_theaters
+    m.title = title
+    m.release_date = year
+    
   end
 end
 
@@ -52,11 +50,15 @@ def can_find_the_first_item_from_the_database_using_id
   movie = Movie.where(id: 1)
 
   movie[0].title
+
+  #Movie.find(1).title
 end
 
 def can_find_by_multiple_attributes
   movie = Movie.where(title: "Title", release_date: 2000, director: "Me")
   movie[0]
+
+  #Movie.find_by(title: "Title", release_date: 2000)
 end
 
 def can_find_using_where_clause_and_be_sorted
