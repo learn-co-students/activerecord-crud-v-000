@@ -6,12 +6,16 @@
 # end                              # end
 
 def can_be_instantiated_and_then_saved
-  movie = Movie.new(attributes={})##
+  movie = Movie.new(attributes={})## could also instantiate w/o arg
   movie.title = "This is a title."
   movie.save
+
+  #solution
+  #movie = Movie.new
 end
 
 def can_be_created_with_a_hash_of_attributes
+  #didn't actually need this hash? is it fed in??
   attributes = {
       title: "The Sting",
       release_date: 1973,
@@ -22,12 +26,21 @@ def can_be_created_with_a_hash_of_attributes
   movie = Movie.create(attributes)
 end
 
-def can_be_created_in_a_block
-  Movie.create do |m|
-      m.title = "Home Alone"
-      m.release_date = 1990
-    end
+#from solution ---> better, not stubbed
+def can_be_created_in_a_block(title, year)
+  movie = Movie.create do |m|
+    m.title = title
+    m.release_date = year
+  end
 end
+
+##this is what I did originally; not as good, stubbing/forcing result
+# def can_be_created_in_a_block
+#   Movie.create do |m|
+#       m.title = "Home Alone"
+#       m.release_date = 1990
+#     end
+# end
 
 def can_get_the_first_item_in_the_database
   Movie.first.title
@@ -46,10 +59,12 @@ def can_find_the_first_item_from_the_database_using_id
 end
 
 def can_find_by_multiple_attributes
-  Movie.find_by(:title => "Title", :release_date => 2000, :director => "Me")
   # title == "Title"
   # release_date == 2000
   # director == "Me"
+  Movie.find_by(:title => "Title", :release_date => 2000, :director => "Me")
+  #solution
+  #Movie.find_by(title: "Title", release_date: 2000)
 end
 
 def can_find_using_where_clause_and_be_sorted
@@ -79,6 +94,8 @@ def can_update_multiple_items_at_once
     Movie.create(title: "Movie_#{i}", release_date: 2000+i)
   end
   Movie.update_all "title = 'A Movie'"
+  #better
+  # Movie.update_all(title: "A Movie")
 end
 
 def can_destroy_a_single_item
