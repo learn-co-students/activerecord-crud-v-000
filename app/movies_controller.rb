@@ -42,28 +42,22 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  __
+  Movie.find_by(id: 1).title
 end
 
 def can_find_by_multiple_attributes
-  # title == "Title"
-  # release_date == 2000
-  # director == "Me"
-  __
+  Movie.find_by(title: "Title", release_date: 2000)
 end
 
 def can_find_using_where_clause_and_be_sorted
-  # For this test return all movies released after 2002 and ordered by
-  # release date descending
-  __
+  Movie.where("release_date > 2002").order(release_date: :desc)
 end
 
 def can_be_found_updated_and_saved
-  # Updtate the title "Awesome Flick" to "Even Awesomer Flick"
   Movie.create(title: "Awesome Flick")
-  __
-  __
-  __
+  movie = Movie.find_by(title: "Awesome Flick")
+  movie.title = "Even Awesome Flick"
+  movie.save
 end
 
 def can_update_using_update_method
