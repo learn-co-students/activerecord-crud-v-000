@@ -13,25 +13,26 @@ def can_be_instantiated_and_then_saved
 end
 
 
-def can_be_created_with_a_hash_of_attributes({})
-  movie = Movie.create({})
+def can_be_created_with_a_hash_of_attributes
+  attributes = {
+      title: "The Sting",
+      release_date: 1973,
+      director: "George Roy Hill",
+      lead: "Paul Newman",
+      in_theaters: false
+  }
+  movie = Movie.create(attributes)
 end
-  # attributes = {
-  #     title: "The Sting",
-  #     release_date: 1973,
-  #     director: "George Roy Hill",
-  #     lead: "Paul Newman",
-  #     in_theaters: false
-  # }
 
 
 
 
 
-def can_be_created_in_a_block(title, release_date)
-  movie = Movie.new(title, release_date) do |m|
-    m.title = title
-    m.release_date = release_date
+
+def can_be_created_in_a_block
+  movie = Movie.create do |m|
+    m.title = "Home Alone"
+    m.release_date = 1990
   end
 end # can be Movie.new or Movie.create
 
