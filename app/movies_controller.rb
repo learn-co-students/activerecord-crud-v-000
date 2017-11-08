@@ -4,7 +4,7 @@
 # def make_a_new_movie_instance    # def make_a_new_movie_instance
 #   movie = __                     #   movie = Movie.new
 # end                              # end
-
+require 'pry'
 def can_be_instantiated_and_then_saved
   movie = Movie.new
   movie.title = "This is a title."
@@ -24,11 +24,8 @@ end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    m.string :title
-    m.integer :release_date
-    m.string :director
-    m.string :lead
-    m.boolean :in_theaters
+    m.title = "Home Alone"
+    m.release_date = 1990
   end
 end
 
@@ -49,11 +46,11 @@ def can_find_the_first_item_from_the_database_using_id
 end
 
 def can_find_by_multiple_attributes
-  Movie.find_by(title, release_date, director)
+  Movie.find_by(title: "Title", release_date: 2000, director: "Me")
 end
 
 def can_find_using_where_clause_and_be_sorted
-  Movie.where(release_date: 2002).order(release_date: :desc)
+  Movie.where("release_date > 2002").order(release_date: :desc)
 end
 
 def can_be_found_updated_and_saved
