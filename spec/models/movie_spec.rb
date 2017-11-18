@@ -1,3 +1,4 @@
+require 'pry'
 describe 'Movie' do
   let(:attributes) {{
       title: "The Sting",
@@ -35,7 +36,7 @@ describe 'Movie' do
 
     it 'has an in theaters flag' do
       movie.in_theaters = false
-      expect(movie.in_theaters?).to be_falsey
+      expect(movie.in_theaters?).to eq(false)
     end
   end
 
