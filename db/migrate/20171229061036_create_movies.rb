@@ -9,4 +9,3 @@ class CreateMovies < ActiveRecord::Migration
     end
   end
 end
-google for how to insert info this way
