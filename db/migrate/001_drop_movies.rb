@@ -1,5 +1,5 @@
 class DropMovies < ActiveRecord::Migration[5.1]
-  def change
-    drop_table :movies
-  end
+  # def change
+  #   drop_table :movies
+  # end
 end
