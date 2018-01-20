@@ -1,5 +1,5 @@
-Active Record CRUD
-Objective
+# Active Record CRUD
+## Objective
 The goal of this lab is to get comfortable performing CRUD (Create, Read, Update, Delete) actions using Active Record.
 
 There are different ways to solve this lab so feel free to experiment!
