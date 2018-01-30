@@ -19,12 +19,13 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = __
+  movie = Movie.new
+  attributes.each {|key, value| movie.send("#{key}=", value)}
 end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    __
+
   end
 end
 
