@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180205193418) do
+ActiveRecord::Schema.define(version: 20180205205516) do
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
     t.string   "director"
     t.string   "lead"
     t.datetime "release_date"
-    t.datetime "in_theatres"
+    t.boolean  "in_theaters"
   end
 
 end
