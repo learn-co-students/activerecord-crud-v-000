@@ -6,7 +6,7 @@ class CreateMovies < ActiveRecord::Migration
         t.datetime :release_date
         t.string :director
         t.string :lead
-        change_column :movies, :in_theatres, boolean
+        t.datetime :in_theatres
       end 
   end
 end
