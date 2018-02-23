@@ -91,21 +91,27 @@ end
 
 def can_update_multiple_items_at_once
   # Change title of all movies to "A Movie"
+  allmovies = []
   5.times do |i|
-    Movie.create(title: "Movie_#{i}", release_date: 2000+i)
+    allmovies << Movie.create(title: "Movie_#{i}", release_date: 2000+i)
   end
-  __
+  allmovies.each{|movie|
+    movie.update(title: "A Movie")
+  }
 end
 
 def can_destroy_a_single_item
   Movie.create(title: "That One Where the Guy Kicks Another Guy Once")
-  __
-  __
+  movie = Movie.find_by(title: "That One Where the Guy Kicks Another Guy Once")
+  movie.destroy
 end
 
 def can_destroy_all_items_at_once
+  allmovies = []
   10.times do |i|
-    Movie.create(title: "Movie_#{i}")
+    allmovies << Movie.create(title: "Movie_#{i}")
   end
-  __
+  allmovies.each{|i|
+    i.destroy
+  }
 end
