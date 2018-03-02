@@ -1,0 +1,83 @@
+
+
+# binding.pry
+# attr_key = m.attributes.keys.first
+# attr_value = m.attributes.values.first
+# self.instance_variable_set("@#{attr_key}", "#{attr_value}")
+
+
+# attr_hash = m.attributes
+# attr_hash.each {|a| m.instance_variable_set("@#{a}", value)}
+# binding.pry
+
+
+
+# attr_array = m.attribute_names
+# attr_array.each do |a|
+#   m.class.send(:attr_accessor, "#{a}")
+# end
+
+
+# attr_array.each { |a| puts a } ==
+
+# => id
+# => title
+# => release_date
+# => director
+# => lead
+# => in_theaters
+
+# Movie.instance_variables.each {|var| puts var} ==
+
+# @attributes_builder
+# @column_names
+# @column_types
+# @columns
+# @columns_hash
+# @content_columns
+# @default_attributes
+# @persistable_attribute_names
+# @generated_attribute_methods
+# @attribute_methods_generated
+# @generated_association_methods
+# @relation_delegate_cache
+# @parent_name
+# @table_name
+# @quoted_table_name
+# @arel_table
+# @sequence_name
+# @arel_engine
+# @relation
+# @locking_column
+# @inheritance_column
+# @primary_key
+# @quoted_primary_key
+# @attribute_method_matchers_cache
+# @finder_needs_type_condition
+# @attribute_names
+# => [:@attributes_builder,
+#  :@column_names,
+#  :@column_types,
+#  :@columns,
+#  :@columns_hash,
+#  :@content_columns,
+#  :@default_attributes,
+#  :@persistable_attribute_names,
+#  :@generated_attribute_methods,
+#  :@attribute_methods_generated,
+#  :@generated_association_methods,
+#  :@relation_delegate_cache,
+#  :@parent_name,
+#  :@table_name,
+#  :@quoted_table_name,
+#  :@arel_table,
+#  :@sequence_name,
+#  :@arel_engine,
+#  :@relation,
+#  :@locking_column,
+#  :@inheritance_column,
+#  :@primary_key,
+#  :@quoted_primary_key,
+#  :@attribute_method_matchers_cache,
+#  :@finder_needs_type_condition,
+#  :@attribute_names]
