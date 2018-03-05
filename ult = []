@@ -1,0 +1,42 @@
+=> [[32m#<Movie:0x00000002276918[0m
+  id: [1;34m1[0m,
+  title: [31m[1;31m"[0m[31mOoti[1;31m"[0m[31m[0m,
+  release_date: [1;36mnil[0m,
+  director: [1;36mnil[0m,
+  lead: [1;36mnil[0m,
+  in_theaters: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x0000000226e7b8[0m
+  id: [1;34m2[0m,
+  title: [31m[1;31m"[0m[31mMovie_0[1;31m"[0m[31m[0m,
+  release_date: [1;34m2000[0m,
+  director: [1;36mnil[0m,
+  lead: [1;36mnil[0m,
+  in_theaters: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x0000000226e538[0m
+  id: [1;34m3[0m,
+  title: [31m[1;31m"[0m[31mMovie_1[1;31m"[0m[31m[0m,
+  release_date: [1;34m2001[0m,
+  director: [1;36mnil[0m,
+  lead: [1;36mnil[0m,
+  in_theaters: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x0000000226e2b8[0m
+  id: [1;34m4[0m,
+  title: [31m[1;31m"[0m[31mMovie_2[1;31m"[0m[31m[0m,
+  release_date: [1;34m2002[0m,
+  director: [1;36mnil[0m,
+  lead: [1;36mnil[0m,
+  in_theaters: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x0000000226e088[0m
+  id: [1;34m5[0m,
+  title: [31m[1;31m"[0m[31mMovie_3[1;31m"[0m[31m[0m,
+  release_date: [1;34m2003[0m,
+  director: [1;36mnil[0m,
+  lead: [1;36mnil[0m,
+  in_theaters: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x0000000226de30[0m
+  id: [1;34m6[0m,
+  title: [31m[1;31m"[0m[31mMovie_4[1;31m"[0m[31m[0m,
+  release_date: [1;34m2004[0m,
+  director: [1;36mnil[0m,
+  lead: [1;36mnil[0m,
+  in_theaters: [1;36mnil[0m[32m>[0m]
