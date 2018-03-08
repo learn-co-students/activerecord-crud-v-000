@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180308144650) do
     t.datetime "release_date"
     t.text     "director"
     t.text     "lead"
-    t.boolean  "in_theatres"
+    t.boolean  "in_theaters"
   end
 
 end
