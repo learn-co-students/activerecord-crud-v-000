@@ -30,11 +30,11 @@ def can_be_created_in_a_block(args = {title: "Home Alone", release_date: 1990})
 end
 
 def can_get_the_first_item_in_the_database
- Movie.all.first.title
+ Movie.first.title
 end
 
 def can_get_the_last_item_in_the_database
-  Movie.all.last.title
+  Movie.last.title
 end
 
 def can_get_size_of_the_database
@@ -49,7 +49,7 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  Movie.find_by(title: "Title",release_date: 2000, director: "Me" )
+  Movie.find_by(title: "Title", release_date: 2000, director: "Me" )
 end
 
 def can_find_using_where_clause_and_be_sorted
@@ -83,6 +83,7 @@ end
 def can_destroy_a_single_item
   m = Movie.create(title: "That One Where the Guy Kicks Another Guy Once")
   m.destroy
+  #or m.delete
 end
 
 def can_destroy_all_items_at_once
@@ -90,4 +91,5 @@ def can_destroy_all_items_at_once
     Movie.create(title: "Movie_#{i}")
   end
   Movie.destroy_all
+  #or m.delete_all
 end
