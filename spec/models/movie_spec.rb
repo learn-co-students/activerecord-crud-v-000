@@ -22,9 +22,9 @@ describe 'Movie' do
       movie.release_date = 1999
       expect(movie.release_date).to eq(1999)
     end
-
     it 'has a director' do
       movie.director = "The Wachowski Sisters"
+      ###THANK YOU
       expect(movie.director).to eq("The Wachowski Sisters")
     end
 
