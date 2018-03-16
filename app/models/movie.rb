@@ -1,2 +1,2 @@
-class Movie < ActiveRecord::Base
+class Movies < ActiveRecord::Base
 end
