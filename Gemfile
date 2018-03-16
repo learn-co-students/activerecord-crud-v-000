@@ -1,7 +1,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-# gem "rails"
+gem "rails"
 
 gem 'sinatra'
 gem 'activerecord', :require => 'active_record'
@@ -12,6 +12,7 @@ gem 'sqlite3'
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
+gem 'json'
 
 group :test do
   gem 'rspec'
