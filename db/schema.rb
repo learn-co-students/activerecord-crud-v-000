@@ -13,12 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20180327023229) do
 
-  create_table "migration", force: :cascade do |t|
+  create_table "movies", force: :cascade do |t|
     t.string   "title"
     t.integer  "release_date"
     t.string   "director"
     t.string   "lead"
-    t.string   "in_theaters"
+    t.boolean  "in_theaters"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
