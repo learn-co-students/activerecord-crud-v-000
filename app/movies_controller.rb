@@ -4,7 +4,7 @@
 # def make_a_new_movie_instance    # def make_a_new_movie_instance
 #   movie = __                     #   movie = Movie.new
 # end                              # end
-
+require 'pry'
 def can_be_instantiated_and_then_saved
   movie = Movie.new
   movie.title = "This is a title."
@@ -22,26 +22,26 @@ def can_be_created_with_a_hash_of_attributes
   movie = Movie.create(attributes)
 end
 
-def can_be_created_in_a_block(args = __)
+def can_be_created_in_a_block (args = { title: "Home Alone", release_date: 1990})
   Movie.create do |m|
-    Movie.create(m)
+    m.update(args)
   end
 end
 
 def can_get_the_first_item_in_the_database
-  Movie.first
+  Movie.first.title
 end
 
 def can_get_the_last_item_in_the_database
-  Movie.last
+  Movie.last.title
 end
 
 def can_get_size_of_the_database
-  Movie.size
+  Movie.all.size
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  Movie.find(1)
+  Movie.find(1).title
 end
 
 def can_find_by_multiple_attributes
@@ -56,8 +56,9 @@ end
 
 def can_be_found_updated_and_saved
   # Updtate the title "Awesome Flick" to "Even Awesomer Flick"
-  movie = Movie.create(title: "Awesome Flick")
-  movie.update title: "Even Awesomer Flick"
+  Movie.create(title: "Awesome Flick")
+  movie = Movie.find_by(title: 'Awesome Flick')
+  movie.update(title: "Even Awesomer Flick")
 end
 
 def can_update_using_update_method
