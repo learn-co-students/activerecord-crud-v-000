@@ -10,7 +10,7 @@ describe 'Movie' do
   it 'inherits from ActiveRecord::Base' do
     expect(Movie.superclass).to eq(ActiveRecord::Base)
   end
-
+ 
   context 'Movie.new' do
     let(:movie) { Movie.new }
     it 'has a title' do
