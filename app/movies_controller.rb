@@ -13,6 +13,7 @@ def can_be_created_with_a_hash_of_attributes
       in_theaters: false
   }
   movie = Movie.new(attributes)
+  movie.save
 end
 
 def can_be_created_in_a_block(args = title, release_date, director, lead, in_theaters)
@@ -26,11 +27,11 @@ def can_be_created_in_a_block(args = title, release_date, director, lead, in_the
 end
 
 def can_get_the_first_item_in_the_database
-  Movie.first
+  Movie.first.title
 end
 
 def can_get_the_last_item_in_the_database
-  Movie.last
+  Movie.last.title
 end
 
 def can_get_size_of_the_database
@@ -38,7 +39,8 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  Movie.find_by(id: 1)
+  movie = Movie.find_by(id: 1)
+  movie.title
 end
 
 def can_find_by_multiple_attributes
@@ -52,14 +54,14 @@ def can_find_using_where_clause_and_be_sorted
   # For this test return all movies released after 2002 and ordered by 
   # release date descending
   
-  Movie.where(release_date >= 2002).order(release_date: DESC)
+  Movie.where(:release_date >= 2002).order(:release_date DESC)
 end
 
 def can_be_found_updated_and_saved
   # Updtate the title "Awesome Flick" to "Even Awesomer Flick"
   Movie.create(title: "Awesome Flick")
   movie = Movie.find_by(title: "Awesome Flick")
-  movie.name = "Even Awesomer Flick"
+  movie.title = "Even Awesomer Flick"
   movie.save
 end
 
@@ -67,7 +69,7 @@ def can_update_using_update_method
   # Update movie title to "Wat, huh?"
   Movie.create(title: "Wat?")
   movie = Movie.find_by(title: "Wat?")
-  movie.update(name: "Wat, huh?")
+  movie.update(title: "Wat, huh?")
 end
 
 def can_update_multiple_items_at_once
@@ -90,7 +92,6 @@ def can_destroy_all_items_at_once
   end
   Movie.destroy_all
 end
-
 
 
 
