@@ -12,17 +12,16 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = Movie.new(attributes)
-  movie.save
+  movie = Movie.create(attributes)
 end
 
 def can_be_created_in_a_block
   Movie.create do |m|
-    m.title: "The Sting",
-    m.release_date: 1973,
-    m.director: "George Roy Hill",
-    m.lead: "Paul Newman",
-    m.in_theaters: false
+    m.title = "The Sting",
+    m.release_date = 1973,
+    m.director = "George Roy Hill",
+    m.lead = "Paul Newman",
+    m.in_theaters = false
   end
 end
 
