@@ -6,9 +6,9 @@
 # end                              # end
 
 def can_be_instantiated_and_then_saved
-  movie = __
+  movie = self.create
   movie.title = "This is a title."
-  __
+  movie
 end
 
 def can_be_created_with_a_hash_of_attributes
@@ -19,36 +19,36 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = __
+  movie = self.new
 end
 
-def can_be_created_in_a_block(args = __)
-  Movie.create do |m|
-    __
+def can_be_created_in_a_block(args = m)
+  self.create do |m|
+    m.new
   end
 end
 
 def can_get_the_first_item_in_the_database
-  __
+  self.first
 end
 
 def can_get_the_last_item_in_the_database
-  __
+  self.last
 end
 
 def can_get_size_of_the_database
-  __
+  self.size
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  __
+  self.first(:id)
 end
 
 def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  __
+  self.find_by(:attribute)
 end
 
 def can_find_using_where_clause_and_be_sorted
