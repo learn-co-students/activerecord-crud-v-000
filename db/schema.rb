@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20180626222341) do
 
   create_table "movies", force: :cascade do |t|
     t.text    "title"
-    t.text    "release_date"
+    t.integer "release_date"
     t.text    "director"
     t.text    "lead"
     t.boolean "in_theaters"
