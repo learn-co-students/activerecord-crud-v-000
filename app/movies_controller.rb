@@ -21,13 +21,16 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = Movie.create(attributes)
+  movie = Movie.new(attributes)
+  movie.save
+  movie
 end
 
 def can_be_created_in_a_block(args = { title: "Home Alone", release_date: 1990 })
   Movie.create do |m|
     m.title = args[:title]
     m.release_date = args[:release_date]
+    m.save
   end
 end
 
@@ -44,37 +47,35 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  Movie.find(1).title
+  Movie.find_by(id:1).title
 end
 
 def can_find_by_multiple_attributes
   #title == "Title"
   #release_date == 2000
   #director == "Me"
-  movie = Movie.find_by_sql("SELECT * FROM movies WHERE title = 'Title' AND release_date = 2000 AND director = 'Me'")
-  movie[0]
+  movie = Movie.find_by(title: "Title", release_date: 2000, director: "Me")
 end
 
 def can_find_using_where_clause_and_be_sorted
   # For this test return all movies released after 2002 and ordered by 
   # release date descending
-  Movie.find_by_sql("SELECT * FROM movies WHERE release_date > 2002 ORDER by release_date desc")
+  Movie.where("release_date > 2002").order(release_date: :desc)
 end
 
 def can_be_found_updated_and_saved
   # Updtate the title "Awesome Flick" to "Even Awesomer Flick"
-  Movie.create(title: "Awesome Flick")
-  movie = Movie.where(title: "Awesome Flick")
-  movie.update_all("title = 'Even Awesomer Flick'")
-  movie
+  movie = Movie.create(title: "Awesome Flick")
+  movie = Movie.find_by(title: "Awesome Flick")
+  movie.update(title: 'Even Awesomer Flick')
+  movie.save
 end
 
 def can_update_using_update_method
   # Update movie title to "Wat, huh?"
-  movie = Movie.create(title: "Wat?")
-  id = movie.id
-  movie.update(:title => "Wat, huh?")
-  movie
+  Movie.create(title: "Wat?")
+  movie = Movie.find_by(title: "Wat?")
+  movie.update(title: "Wat, huh?")
 end
 
 def can_update_multiple_items_at_once
@@ -82,13 +83,13 @@ def can_update_multiple_items_at_once
   5.times do |i|
     Movie.create(title: "Movie_#{i}", release_date: 2000+i)
   end
-  Movie.update_all title: "A Movie"
+  Movie.all.each {|movie| movie.update(title: "A Movie")}
 end
 
 def can_destroy_a_single_item
   Movie.create(title: "That One Where the Guy Kicks Another Guy Once")
-  Movie.delete(1)
-  
+  movie = Movie.find_by(title: "That One Where the Guy Kicks Another Guy Once")
+  movie.delete
 end
 
 def can_destroy_all_items_at_once
