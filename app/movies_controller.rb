@@ -23,33 +23,37 @@ def can_be_created_with_a_hash_of_attributes
 
 end
 
-def can_be_created_in_a_block(args = nil)
-  Movie.create(title: "Home Alone", release_date: 1990)
-  # Movie.create do |m|
-  #   m.args
-  # end
+def can_be_created_in_a_block(args = {title: "Home Alone", release_date: 1990})
+  Movie.create do |m|
+    m.title = args[:title]
+     m.release_date = args[:release_date]
+     m.director = args[:director]
+     m.lead = args[:lead]
+     m.in_theaters = args[:in_theaters]
+  end
 end
 
 def can_get_the_first_item_in_the_database
-  Movie.first
+  Movie.first.title
 end
 
 def can_get_the_last_item_in_the_database
-  Movie.last
+  Movie.last.title
 end
 
 def can_get_size_of_the_database
-  Movie.size
+  Movie.count
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  Movie.find_by id: 1
+  Movie.find_by(id: 1).title
 end
 
 def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
+  Movie.find_by_title_and_release_date_and_director(params[:user_id],params[:project_id])
   Movie.find_by(title: 'Title', release_date: 2000, director: 'Me')
 end
 
