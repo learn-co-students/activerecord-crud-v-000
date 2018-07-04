@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20180704032304) do
 
   create_table "Movies", force: :cascade do |t|
-    t.string  "title"
-    t.integer "release_date"
-    t.string  "director"
-    t.string  "lead"
-    t.boolean "in_theaters"
+    t.string   "title"
+    t.datetime "release_date"
+    t.string   "director"
+    t.string   "lead"
+    t.boolean  "in_theaters"
   end
 
 end
