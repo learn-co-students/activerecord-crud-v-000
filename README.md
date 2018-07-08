@@ -20,7 +20,7 @@ After your migration is ready run `rake db:migrate` to migrate your table and `r
 ### Tests
 Run `rspec` or `learn` to see the tests. To make them pass open `movie_controller.rb` and complete each method. It will help to open `spec/models/movie_spec.rb` to see exactly what each spec is testing for.
 
-In each method the `__` corresponds to a line of code you will need to write to make the spec pass. 
+In each method the `__` corresponds to a line of code you will need to write to make the spec pass.
 
 Each test will take us through performing a basic CRUD action using the database we just created. These tests will take you through:
 
@@ -50,3 +50,14 @@ Each test will take us through performing a basic CRUD action using the database
 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html).
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/activerecord-crud' title='Active Record CRUD'>Active Record CRUD</a> on Learn.co and start learning to code for free.</p>
+
+
+<!-- class CreateMovies < ActiveRecord::Migration[4.2]
+  def change
+ create_table :movies do |t|
+   t.string :title
+   t.datetime :release_date
+   t.string :director
+   t.string :lead_actor
+ end
+end -->
