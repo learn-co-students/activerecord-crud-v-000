@@ -25,6 +25,7 @@ end
 def can_be_created_in_a_block(args = nil)
   Movie.create do |movie|
     if args
+      binding.pry
       args.each {|arg, value| movie.send("#{arg.to_s}="), "#{value}"}
     else
       movie.title = "Home Alone"
