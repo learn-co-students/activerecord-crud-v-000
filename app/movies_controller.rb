@@ -27,6 +27,9 @@ def can_be_created_in_a_block(args = nil)
     if args
       args.each {|arg, value| movie.arg = value }
     else
+      movie.title = "Home Alone"
+      movie.release_date = 1990
+    end
   end
 end
 
