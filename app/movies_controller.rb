@@ -24,7 +24,9 @@ end
 
 def can_be_created_in_a_block(args = nil)
   Movie.create do |movie|
-    __
+    args.each do |arg, value|
+      movie.arg = value
+    end
   end
 end
 
