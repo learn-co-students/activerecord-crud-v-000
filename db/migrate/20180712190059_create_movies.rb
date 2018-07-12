@@ -6,8 +6,6 @@ class CreateMovies < ActiveRecord::Migration
       add_column :director, :string
       add_column :lead, :string
       add_column :in_theaters, :boolean
-
     end
-    file add columns for title ,release_date, director, lead, and in_theaters.
   end
 end
