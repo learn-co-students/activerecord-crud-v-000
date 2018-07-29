@@ -45,6 +45,7 @@ end
 
 def can_get_size_of_the_database
   Movie.all.length
+  #could have used Movie.count
 end
 
 def can_find_the_first_item_from_the_database_using_id
@@ -57,6 +58,7 @@ def can_find_by_multiple_attributes
   # release_date == 2000
   # director == "Me"
   movie = Movie.where(title: "Title", release_date: 2000, director: "Me").first
+  #could have used Movie.find_by(title: "Title", release_date: 2000, director: "Me")
   #binding.pry
 end
 
