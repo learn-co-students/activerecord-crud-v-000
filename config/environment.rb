@@ -1,4 +1,6 @@
 require 'bundler/setup'
+require 'rake'
+
 Bundler.require
 
 ActiveRecord::Base.establish_connection(
