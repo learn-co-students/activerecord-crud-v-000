@@ -4,7 +4,7 @@
 # def make_a_new_movie_instance    # def make_a_new_movie_instance
 #   movie = __                     #   movie = Movie.new
 # end                              # end
-
+require 'pry'
 def can_be_instantiated_and_then_saved
   movie = Movie.new
   movie.title = "This is a title."
@@ -20,7 +20,7 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = 
+  movie = Movie.create(attributes)
 end
 
 def can_be_created_in_a_block(title= "Home Alone", release_date= 1990)
@@ -29,12 +29,13 @@ def can_be_created_in_a_block(title= "Home Alone", release_date= 1990)
   # release_date == 1990
   
   Movie.create do |m|
-    __
+    m.title = title
+    m.release_date = release_date
   end
 end
 
 def can_get_the_first_item_in_the_database
-  __
+  "SELECT MAX(title) FROM movies"
 end
 
 def can_get_the_last_item_in_the_database
