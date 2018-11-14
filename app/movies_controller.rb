@@ -37,7 +37,12 @@ def can_be_created_in_a_block(args = {:title => "Home Alone", :release_date => 1
 end
 
 def can_get_the_first_item_in_the_database
-  
+#   1.1.2 first
+# Model.first(options = nil) finds the first record matched by the supplied options. If no options are supplied, the first matching record is returned. For example:
+#
+#
+# client = Client.first
+# => #<Client id: 1, name: => "Lifo">
   __
 end
 
