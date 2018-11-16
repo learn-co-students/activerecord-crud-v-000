@@ -42,15 +42,17 @@ def can_get_the_first_item_in_the_database
 end
 
 def can_get_the_last_item_in_the_database
-  __
+  movie = Movie.last
+  movie
 end
 
 def can_get_size_of_the_database
-  __
+  movie = Movie.count
+  movie
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  __
+  movie = Movie.find(1)
 end
 
 def can_find_by_multiple_attributes
@@ -58,7 +60,8 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  __
+  Movie.find_by(:title, :release_date, :director)
+  # Permission.find_by(user_id: params[:user_id], project_id: params[:project_id])
 end
 
 def can_find_using_where_clause_and_be_sorted
