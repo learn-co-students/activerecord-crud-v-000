@@ -60,22 +60,22 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  Movie.find_by(:title, :release_date, :director)
-  # Permission.find_by(user_id: params[:user_id], project_id: params[:project_id])
+  Movie.find_by title: "Title", release_date: 2000, director: "Me"
 end
 
 def can_find_using_where_clause_and_be_sorted
   # For this test return all movies released after 2002 and ordered by
   # release date descending
-  __
+  Movie.where('release_date > 2002').order(release_date: :desc)
 end
 
 def can_be_found_updated_and_saved
-  # Updtate the title "Awesome Flick" to "Even Awesomer Flick", save it, then return it
+  # Update the title "Awesome Flick" to "Even Awesomer Flick", save it, then return it
   Movie.create(title: "Awesome Flick")
-  __
-  __
-  __
+  movie = Movie.find_by title: "Awesome Flick"
+  movie.title = "Even Awesomer Flick"
+  movie.save
+  movie
 end
 
 def can_update_using_update_method
