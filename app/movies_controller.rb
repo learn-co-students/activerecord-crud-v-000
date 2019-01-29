@@ -37,19 +37,19 @@ def can_be_created_in_a_block(args = {:title => "Home Alone", :release_date => 1
 end
 
 def can_get_the_first_item_in_the_database
-  __
+  Movie.first
 end
 
 def can_get_the_last_item_in_the_database
-  __
+  Movie.last
 end
 
 def can_get_size_of_the_database
-  __
+  Movie.count
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  __
+  
 end
 
 def can_find_by_multiple_attributes
