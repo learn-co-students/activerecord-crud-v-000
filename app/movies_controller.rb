@@ -91,13 +91,13 @@ end
 
 def can_destroy_a_single_item
   Movie.create(title: "That One Where the Guy Kicks Another Guy Once")
-  __
-  __
+  movie = Movie.find_by(:title => "That One Where the Guy Kicks Another Guy Once")
+  Movie.destroy(movie[:id])
 end
 
 def can_destroy_all_items_at_once
   10.times do |i|
     Movie.create(title: "Movie_#{i}")
   end
-  __
+  Movie.destroy_all()
 end
