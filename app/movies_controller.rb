@@ -23,22 +23,23 @@ def can_be_created_with_a_hash_of_attributes
   movie = Movie.create(attributes)
 end
 
-def can_be_created_in_a_block(args = __)
+def can_be_created_in_a_block(movie = {title: "Home Alone", release_date: 1990})
   # If no arguments are passed, use default values:
   # title == "Home Alone"
   # release_date == 1990
   
   Movie.create do |m|
-    __
+    m.title = movie[:title]
+    m.release_date = movie[:release_date]
   end
 end
 
 def can_get_the_first_item_in_the_database
-  Movie.all.first
+  Movie.first
 end
 
 def can_get_the_last_item_in_the_database
-  Movie.all.last
+  Movie.last
 end
 
 def can_get_size_of_the_database
@@ -46,7 +47,7 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  Movie.find_by(id)
+  Movie.find_by(id: 1)
 end
 
 def can_find_by_multiple_attributes
@@ -54,13 +55,13 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  Movie.find_by()
+  Movie.find_by(title: "Title")
 end
 
 def can_find_using_where_clause_and_be_sorted
   # For this test return all movies released after 2002 and ordered by 
   # release date descending
-  movies = Movie.where(release_date > 2002).descending
+  movie = Movie.where('release_date > 2002').order(release_date: :desc)
 end
 
 def can_be_found_updated_and_saved
@@ -83,7 +84,7 @@ def can_update_multiple_items_at_once
   5.times do |i|
     Movie.create(title: "Movie_#{i}", release_date: 2000+i)
   end
-  Movie.all.update(title: "A Movie")
+  Movie.update_all(title: "A Movie")
 end
 
 def can_destroy_a_single_item
