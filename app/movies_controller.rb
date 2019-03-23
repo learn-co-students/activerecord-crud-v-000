@@ -67,14 +67,11 @@ def can_find_the_first_item_from_the_database_using_id
 end
 
 def can_find_by_multiple_attributes
-  Movie.find_by(title: "Title")
-  Movie.find_by(release_date: "2000")
-  Movie.find_by(director: "Me")
   # Search Values:
-#   title == "Title"
-#   release_date == 2000
-#   director == "Me"
-#   Movie.find_by(key: "value", key: value,...)
+  #   title == "Title"
+  #   release_date == 2000
+  #   director == "Me"
+    Movie.find_by(title: "Title", release_date: "2000", director: "Me")
 end
 
 def can_find_using_where_clause_and_be_sorted
@@ -102,7 +99,7 @@ def can_update_multiple_items_at_once
   # Change title of all movies to "A Movie"
   5.times do |i|
     Movie.create(title: "Movie_#{i}", release_date: 2000+i)
-end
+  end
   Movie.update_all(title: "A Movie")
 end
 
