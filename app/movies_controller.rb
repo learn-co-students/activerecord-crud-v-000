@@ -21,32 +21,30 @@ def can_be_created_with_a_hash_of_attributes
       in_theaters: false
   }
   movie = movie.create(attributes)
+
 end
 
-def can_be_created_in_a_block(args = __)
-  # If no arguments are passed, use default values:
-  # title == "Home Alone"
-  # release_date == 1990
-  
+def can_be_created_in_a_block
   Movie.create do |m|
-    __
+   m.title="The Matrix"
+   m.release_date = 1999
   end
 end
 
 def can_get_the_first_item_in_the_database
-  __
+ Movie.first.title 
 end
 
 def can_get_the_last_item_in_the_database
-  __
+ Movie.last.title 
 end
 
 def can_get_size_of_the_database
-  __
+ Movie.all.size
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  __
+  movie.find(1).title 
 end
 
 def can_find_by_multiple_attributes
@@ -54,7 +52,7 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  __
+  Movie.find_or_create_by(title: 'Title', release_date: 2000, director: "Me")
 end
 
 def can_find_using_where_clause_and_be_sorted
