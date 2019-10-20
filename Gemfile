@@ -13,3 +13,4 @@ group :test do
   gem 'rack-test'
   gem 'database_cleaner'
 end
+#, git: 'https://github.com/bmabey/database_cleaner.git'
