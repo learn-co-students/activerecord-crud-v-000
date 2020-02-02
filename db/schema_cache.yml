@@ -1,0 +1,183 @@
+--- !ruby/object:ActiveRecord::ConnectionAdapters::SchemaCache
+columns:
+  schema_migrations:
+  - &1 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: version
+    table_name: schema_migrations
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit: 
+      precision: 
+      scale: 
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  ar_internal_metadata:
+  - &2 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: key
+    table_name: ar_internal_metadata
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit: 
+      precision: 
+      scale: 
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &3 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: value
+    table_name: ar_internal_metadata
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit: 
+      precision: 
+      scale: 
+    'null': true
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &4 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: created_at
+    table_name: ar_internal_metadata
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: datetime
+      type: :datetime
+      limit: 
+      precision: 
+      scale: 
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &5 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: updated_at
+    table_name: ar_internal_metadata
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: datetime
+      type: :datetime
+      limit: 
+      precision: 
+      scale: 
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  movies:
+  - &6 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: id
+    table_name: movies
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: integer
+      type: :integer
+      limit: 
+      precision: 
+      scale: 
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &7 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: title
+    table_name: movies
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit: 
+      precision: 
+      scale: 
+    'null': true
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &8 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: relese_date
+    table_name: movies
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: integer
+      type: :integer
+      limit: 
+      precision: 
+      scale: 
+    'null': true
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &9 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: director
+    table_name: movies
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit: 
+      precision: 
+      scale: 
+    'null': true
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &10 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: lead
+    table_name: movies
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit: 
+      precision: 
+      scale: 
+    'null': true
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &11 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: in_theaters
+    table_name: movies
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: boolean
+      type: :boolean
+      limit: 
+      precision: 
+      scale: 
+    'null': true
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+columns_hash:
+  schema_migrations:
+    version: *1
+  ar_internal_metadata:
+    key: *2
+    value: *3
+    created_at: *4
+    updated_at: *5
+  movies:
+    id: *6
+    title: *7
+    relese_date: *8
+    director: *9
+    lead: *10
+    in_theaters: *11
+primary_keys:
+  schema_migrations: version
+  ar_internal_metadata: key
+  movies: id
+data_sources:
+  schema_migrations: true
+  ar_internal_metadata: true
+  movies: true
+version: 20190602210642
