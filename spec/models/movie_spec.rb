@@ -132,8 +132,11 @@ describe 'Movie' do
       end
 
       it 'can be updated using #update' do
+
         can_update_using_update_method
         expect(Movie.find_by(title: "Wat, huh?")).to_not be_nil
+        #David Ritchey said I can ignore this test.
+        #blame him not me - Benito Santos
       end
 
       it 'can update all records at once' do
