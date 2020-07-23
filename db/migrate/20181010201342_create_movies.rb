@@ -1,4 +1,4 @@
-class Movie < ActiveRecord::Base
+class CreateMovies < ActiveRecord::Migration[5.2]
   def change
     create_table :movies do |movie|
       movie.string :title
