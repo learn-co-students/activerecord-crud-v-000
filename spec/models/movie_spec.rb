@@ -98,7 +98,7 @@ describe 'Movie' do
         expect(movie.title).to eq("Movie_0")
       end
 
-      it 'can get the last item in the databse' do
+      it 'can get the last item in the database' do
         movie = can_get_the_last_item_in_the_database
         expect(movie.title).to eq("Movie_4")
       end
