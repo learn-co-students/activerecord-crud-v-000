@@ -1,4 +1,4 @@
-describe 'Movie' do
+describe 'Movie' do 
   let(:attributes) {{
       title: "The Sting",
       release_date: 1973,
