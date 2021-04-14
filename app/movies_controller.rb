@@ -30,7 +30,7 @@ def can_be_created_in_a_block(args = attributes)
   # release_date == 1990
   
   Movie.create do |m|
-    args[:title]
+    args[:m]
   end
   binding.pry
 end
